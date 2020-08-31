@@ -150,12 +150,46 @@
             var templateStart = "<figure><a class='d-block mb-4' data-fancybox='images' href='images/gallery/";
             var templateMiddle = ".jpg' data-caption=''><img class='img-fluid' src='images/gallery/";
             var templateEnd = ".jpg' alt='' /></a></figure>";
+            console.log("Loading initial images 1-12...");
             fillColumn(1, 10, 1, templateStart, templateMiddle, templateEnd);
             fillColumn(2, 11, 2, templateStart, templateMiddle, templateEnd);
             fillColumn(3, 12, 3, templateStart, templateMiddle, templateEnd);
-            fillColumn(13,125, 4, templateStart, templateMiddle, templateEnd);
-            fillColumn(14,125, 5, templateStart, templateMiddle, templateEnd);
-            fillColumn(15,125, 6, templateStart, templateMiddle, templateEnd);
+            
+            var timeoutSetting = 3000;
+            
+            setTimeout(() => {  
+                console.log("Loading deferred images 13-39...");
+                fillColumn(13,37, 4, templateStart, templateMiddle, templateEnd);
+                fillColumn(14,38, 5, templateStart, templateMiddle, templateEnd);
+                fillColumn(15,39, 6, templateStart, templateMiddle, templateEnd);
+
+                setTimeout(() => {  
+                    console.log("Loading more deferred images 40-69...");
+                    fillColumn(40,67, 4, templateStart, templateMiddle, templateEnd);
+                    fillColumn(41,68, 5, templateStart, templateMiddle, templateEnd);
+                    fillColumn(42,69, 6, templateStart, templateMiddle, templateEnd);
+
+                        setTimeout(() => {  
+                        console.log("Loading more deferred images 70-99...");
+                        fillColumn(70,97, 4, templateStart, templateMiddle, templateEnd);
+                        fillColumn(71,98, 5, templateStart, templateMiddle, templateEnd);
+                        fillColumn(72,99, 6, templateStart, templateMiddle, templateEnd);
+
+                            setTimeout(() => {  
+                            console.log("Loading more deferred images 100-125...");
+                            fillColumn(100,125, 4, templateStart, templateMiddle, templateEnd);
+                            fillColumn(101,125, 5, templateStart, templateMiddle, templateEnd);
+                            fillColumn(102,125, 6, templateStart, templateMiddle, templateEnd);
+
+                            }, timeoutSetting);
+                        }, timeoutSetting);
+                    }, timeoutSetting);
+                }, timeoutSetting);
+
+                
+            //fillColumn(13,125, 4, templateStart, templateMiddle, templateEnd);
+            //fillColumn(14,125, 5, templateStart, templateMiddle, templateEnd);
+            //fillColumn(15,125, 6, templateStart, templateMiddle, templateEnd);
         }) 
 
         function fillColumn(startPic, endPic, columnNumber, templateStart, templateMiddle, templateEnd){
@@ -163,22 +197,9 @@
             pic = startPic; 
 
             for (var i = pic; pic <= endPic; i++) {
-                console.log(`i is ${i}, current pic is ${pic}`)
+                //console.log(`i is ${i}, current pic is ${pic}`)
                 var template = templateStart + pic + templateMiddle + pic + templateEnd;
                 $( `#picture-column-${columnNumber}` ).append(template);
-                pic = pic + 3;
-            }
-        }
-
-        
-        function fillMoreColumn(column, templateStart, templateMiddle, templateEnd){
-            var totalPictures = 125;
-            pic = column; 
-
-            for (var i = pic; pic <= totalPictures; i++) {
-                console.log(`i is ${i}, current pic is ${pic}`)
-                var template = templateStart + pic + templateMiddle + pic + templateEnd;
-                $( `#picture-column-${column}` ).append(template);
                 pic = pic + 3;
             }
         }
