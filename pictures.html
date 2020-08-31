@@ -93,18 +93,19 @@
                         <div id="picture-column-6"></div>
                     </div>
                 </div>
-                <div class="row mb-4 align-items-stretch mt-60">
-                    <div class="col-12">
+                
+                <!-- <div class="row mb-4 align-items-stretch mt-60">
+                    <div class="col-12"> -->
                         <!-- show more -->
-                        <div class="pozo-show-more-container">
+                        <!-- <div class="pozo-show-more-container">
                             <div class="row align-items-stretch pozo-photos" id="pozo-section-photos">
                                 <div class="col-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
-                                    <div id="picture-column-4-more"></div>
+                                    <div id="picture-column-4-more"></div> -->
                                     <!-- <figure>
                                         <a class="d-block mb-4" data-fancybox="images" href="images/gallery/80.jpg" data-caption="">
                                             <img class="img-fluid" src="images/gallery/80.jpg" alt="" /></a>
                                     </figure> -->
-                                </div>
+                                <!-- </div>
                                 <div class="col-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
                                     <div id="picture-column-5-more"></div>
                                 </div>
@@ -112,23 +113,23 @@
                                     <div id="picture-column-6-more"></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- add more -->
-                        <div class="pozo-more-wrapper txt-center animate-box" data-animate-effect="fadeInUp">
+                        <!-- <div class="pozo-more-wrapper txt-center animate-box" data-animate-effect="fadeInUp">
                             <a href="index.html#" class="pozo-more-trigger flex"> <span class="plus flex-center">&nbsp;</span> </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- Footer -->
         <footer>
             <div class="container pozo-footer-container">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         <p class="pozo-copyright-left"><a href="index.html">frank<span>masiello</span>.com</a></p>
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-8">
                         <p class="pozo-copyright"><span><i class="fa fa-heart" aria-hidden="true"></i></span>&nbsp;&nbsp; forever <span>loved</span></p>
                     </div>
                 </div>
@@ -149,12 +150,12 @@
             var templateStart = "<figure><a class='d-block mb-4' data-fancybox='images' href='images/gallery/";
             var templateMiddle = ".jpg' data-caption=''><img class='img-fluid' src='images/gallery/";
             var templateEnd = ".jpg' alt='' /></a></figure>";
-            fillColumn(1, 25, 1, templateStart, templateMiddle, templateEnd);
-            fillColumn(2, 26, 2, templateStart, templateMiddle, templateEnd);
-            fillColumn(3, 27, 3, templateStart, templateMiddle, templateEnd);
-            fillColumn(28,125, 4, templateStart, templateMiddle, templateEnd);
-            fillColumn(29,125, 5, templateStart, templateMiddle, templateEnd);
-            fillColumn(30,125, 6, templateStart, templateMiddle, templateEnd);
+            fillColumn(1, 10, 1, templateStart, templateMiddle, templateEnd);
+            fillColumn(2, 11, 2, templateStart, templateMiddle, templateEnd);
+            fillColumn(3, 12, 3, templateStart, templateMiddle, templateEnd);
+            fillColumn(13,125, 4, templateStart, templateMiddle, templateEnd);
+            fillColumn(14,125, 5, templateStart, templateMiddle, templateEnd);
+            fillColumn(15,125, 6, templateStart, templateMiddle, templateEnd);
         }) 
 
         function fillColumn(startPic, endPic, columnNumber, templateStart, templateMiddle, templateEnd){
