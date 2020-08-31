@@ -75,6 +75,7 @@
 <!-- ROW 1 -->
                     <div class="col-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
                         <div id="picture-column-1"></div>
+                        <div id="picture-column-4"></div>
                         <!-- <figure>
                             <a class="d-block mb-4" data-fancybox="images" href="images/gallery/1.jpg" data-caption=""> 
                                 <img class="img-fluid" src="images/gallery/1.jpg" alt="" /> 
@@ -84,10 +85,12 @@
 <!-- ROW 2 -->        
                     <div class="col-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
                         <div id="picture-column-2"></div>
+                        <div id="picture-column-5"></div>
                     </div>
 <!-- ROW 3 -->
                     <div class="col-6 col-lg-4 d-none d-lg-block animate-box" data-animate-effect="fadeInUp">
                         <div id="picture-column-3"></div>
+                        <div id="picture-column-6"></div>
                     </div>
                 </div>
                 <div class="row mb-4 align-items-stretch mt-60">
@@ -96,17 +99,17 @@
                         <div class="pozo-show-more-container">
                             <div class="row align-items-stretch pozo-photos" id="pozo-section-photos">
                                 <div class="col-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
-                                    <div id="picture-column-4"></div>
+                                    <div id="picture-column-4-more"></div>
                                     <!-- <figure>
                                         <a class="d-block mb-4" data-fancybox="images" href="images/gallery/80.jpg" data-caption="">
                                             <img class="img-fluid" src="images/gallery/80.jpg" alt="" /></a>
                                     </figure> -->
                                 </div>
                                 <div class="col-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
-                                    <div id="picture-column-5"></div>
+                                    <div id="picture-column-5-more"></div>
                                 </div>
                                 <div class="col-6 col-lg-4 d-none d-lg-block animate-box" data-animate-effect="fadeInUp">
-                                    <div id="picture-column-6"></div>
+                                    <div id="picture-column-6-more"></div>
                                 </div>
                             </div>
                         </div>
@@ -146,15 +149,28 @@
             var templateStart = "<figure><a class='d-block mb-4' data-fancybox='images' href='images/gallery/";
             var templateMiddle = ".jpg' data-caption=''><img class='img-fluid' src='images/gallery/";
             var templateEnd = ".jpg' alt='' /></a></figure>";
-            fillColumn(1, templateStart, templateMiddle, templateEnd);
-            fillColumn(2, templateStart, templateMiddle, templateEnd);
-            fillColumn(3, templateStart, templateMiddle, templateEnd);
-            // fillColumn(4, templateStart, templateMiddle, templateEnd);
-            // fillColumn(5, templateStart, templateMiddle, templateEnd);
-            // fillColumn(6, templateStart, templateMiddle, templateEnd);
+            fillColumn(1, 25, 1, templateStart, templateMiddle, templateEnd);
+            fillColumn(2, 26, 2, templateStart, templateMiddle, templateEnd);
+            fillColumn(3, 27, 3, templateStart, templateMiddle, templateEnd);
+            fillColumn(28,125, 4, templateStart, templateMiddle, templateEnd);
+            fillColumn(29,125, 5, templateStart, templateMiddle, templateEnd);
+            fillColumn(30,125, 6, templateStart, templateMiddle, templateEnd);
         }) 
 
-        function fillColumn(column, templateStart, templateMiddle, templateEnd){
+        function fillColumn(startPic, endPic, columnNumber, templateStart, templateMiddle, templateEnd){
+            //var totalPictures = 125;
+            pic = startPic; 
+
+            for (var i = pic; pic <= endPic; i++) {
+                console.log(`i is ${i}, current pic is ${pic}`)
+                var template = templateStart + pic + templateMiddle + pic + templateEnd;
+                $( `#picture-column-${columnNumber}` ).append(template);
+                pic = pic + 3;
+            }
+        }
+
+        
+        function fillMoreColumn(column, templateStart, templateMiddle, templateEnd){
             var totalPictures = 125;
             pic = column; 
 
