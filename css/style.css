@@ -1535,10 +1535,18 @@ ul.team-info-social li {
 .pozo-copyright-left {
     color: #999;
     font-size: 13px;
-    margin-left: 10px;
+    margin-left: 35px;
+    /* width: 40%; */
     text-align: left;
 }
-.pozo-copyright span, .pozo-copyright-left span {
+.pozo-copyright-right {
+    color: #999;
+    font-size: 13px;
+    margin-right: 35px;
+    margin-left: auto;
+    text-align: right;
+}
+.pozo-copyright span {
     font-size: 13px;
     font-family: 'Mukta', sans-serif;
     color: #9c5451;
